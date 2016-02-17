@@ -1,0 +1,20 @@
+!!!
+%html(lang="en")
+  -set mytype = 'archive'
+  -include 'header.haml' with {'type': mytype}
+  %body
+    .wrapper-for-content-outside-of-footer
+      -include 'mainmenu.haml' with {'type': mytype}
+      %main#main
+        %h1.header Blog Archive
+        %hr
+        -if pages|length == 0
+          .content-title Nothing has been written yet
+        -for post in pages
+          -if post.meta.template == 'post'
+            -if post.meta.published == 'true'
+              -include 'blogentry.haml' with {'entry': post}
+    / Common includes
+    -include 'footer.haml' with {'type': mytype}
+    -include 'scripts.haml'
+    -include 'ga_track.haml'

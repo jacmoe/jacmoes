@@ -1,0 +1,43 @@
+!!!
+%html(lang="en")
+  -set mytype = 'blog'
+  -include 'header.haml' with {'type': mytype}
+  %body
+    .wrapper-for-content-outside-of-footer
+      -include 'mainmenu.haml' with {'type': mytype}
+      %main#main(itemscope itemtype="http://schema.org/BlogPosting")
+        %article.item
+          %h1.ui.header(itemprop="name")
+            %span(itemprop="headline") = current_page.meta.title
+          .quiet-header.post-description(itemprop="description")
+            =current_page.meta.description
+          %hr.thin
+          .quiet.post-created
+            %time(itemprop="dateCreated"
+              datetime="#{current_page.meta.datetime}")
+              =current_page.meta.date|date(config.date_format)
+            %span.right
+              -if current_page.meta.tags != ''
+                %i.fi-price-tag
+                -for tag in current_page.meta.tags_array
+                  %a(href="#{base_url}/tag/#{tag}" rel="tag")
+                    =tag
+          %br
+          %meta(itemprop="image"
+            content="#{base_url}/content/images/#{current_page.meta.ogimage}")
+          .post-content(itemprop="articleBody")
+            =content
+          %time(itemprop="datePublished"
+            datetime="#{current_page.meta.datetime}")
+        .ui.horizontal.divider
+          %i.fi-heart
+        .item-title Comments
+        %p.comment-instructions To comment as a guest, click in the name field under "Or sign up with disqus" and then select the "I'd rather post as guest" option.
+        #disqus_thread
+      -if current_page.meta.disqusid
+        / include Disqus code
+        -include "disqus.haml"
+    / Common includes
+    -include 'footer.haml' with {'type': mytype}
+    -include 'scripts.haml'
+    -include 'ga_track.haml'

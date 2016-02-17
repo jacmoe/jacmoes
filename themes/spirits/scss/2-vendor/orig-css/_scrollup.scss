@@ -1,0 +1,35 @@
+/* Image style */
+#scrollUp {
+  bottom: 170px;
+  right: 20px;
+  height: 38px;  /* Height of image */
+  width: 38px; /* Width of image */
+  background: url(../../img/top.png) no-repeat;
+}
+
+#toggleActive {
+  padding: 6px;
+  width: 160px;
+  text-align: center;
+  display: inline-block;
+  background: #333;
+  color: #eee;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease-out;
+  -mozilla-transition: all 200ms ease-out;
+  -ms-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+  #toggleActive.active {
+    background: #F66169;
+    color: #FAEFDE;
+  }
+
+#scrollUp-active{
+  display: none;
+}

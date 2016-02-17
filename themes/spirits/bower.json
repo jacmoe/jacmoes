@@ -1,0 +1,19 @@
+{
+  "name": "Grog",
+  "version": "0.0.1",
+  "authors": [
+    "jacmoe <jacmoe.dk@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 2.1.0",
+    "modernizr": "2.8.3"
+  }
+}

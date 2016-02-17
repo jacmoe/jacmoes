@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the main section of the site/application.
+// -----------------------------------------------------------------------------
+
+#main {
+    @include outer-container;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.post {
+  @include outer-container;
+
+  .postaside {
+      @include media($large) {
+          @include span-columns(3);
+      }
+  }
+  .postmain {
+      @include media($large) {
+          @include span-columns(8);
+      }
+  }
+}
+
+.blogentry {
+  @include row;
+}
+
+.row {
+  @include outer-container;
+}
+
+.half {
+  @include media($medium) {
+      @include span-columns(6);
+  }
+  @include media($large) {
+      @include span-columns(6);
+  }
+}
+
+.pagination {
+  position: relative;
+  top: -2em;
+}
+
+.item-title {
+  font-size: modular-scale(2);
+}
+
+.comment-instructions {
+  color: #6f6f6f;
+  font-weight: bolder;
+}

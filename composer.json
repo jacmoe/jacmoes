@@ -1,0 +1,31 @@
+{
+  "name": "Jacmoes Cyber Soapbox",
+  "version": "1.0.0",
+  "type": "website",
+  "description": ".",
+  "keywords": ["jacmoe", "jacob", "moen", "blog", "philecms"],
+  "homepage": "http://jacmoe.dk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jacob Moen",
+      "email": "jacmoe.dk@gmail.com",
+      "homepage": "http://jacmoe.dk",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "lib/vendor"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "twig/twig": "1.15.*",
+    "michelf/php-markdown": ">=1.4",
+    "phpfastcache/phpfastcache": "~3.0",
+    "symfony/yaml": "^2.7",
+    "phile-cms/plugin-installer-plugin": ">=1.0.2",
+    "infostreams/snippets": "^1.1.7",
+    "phile/xmlsitemap": "dev-master",
+    "jacmoe/template-mthaml": "^1.0"
+  }
+}

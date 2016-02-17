@@ -1,0 +1,26 @@
+!!!
+%html(lang="en")
+  -set mytype = 'tag'
+  -include 'header.haml' with {'type': mytype}
+  %body
+    .wrapper-for-content-outside-of-footer
+      -include 'mainmenu.haml' with {'type': mytype}
+      %main#main
+        -set tagged_pages = 0
+        -for page in pages
+          -if page.meta.published == 'true'
+            -if page.meta.tags_array and current_tag in page.meta.tags_array
+              -set tagged_pages = tagged_pages + 1
+        %h3
+          #{tagged_pages} posts tagged with
+          %em #{current_tag}
+          \:
+        %hr
+        -for page in pages
+          -if page.meta.published == 'true'
+            -if page.meta.tags_array and current_tag in page.meta.tags_array
+              -include 'blogentry.haml' with {'entry': page}
+    / Common includes
+    -include 'footer.haml' with {'type': mytype}
+    -include 'scripts.haml'
+    -include 'ga_track.haml'
