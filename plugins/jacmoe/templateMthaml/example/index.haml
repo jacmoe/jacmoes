@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %meta(charset="#{ config.charset }")
+    %base(href="#{ base_url }")
+    %title
+      - if meta.title
+        = meta.title
+      = site_title
+    - if meta.description
+      %meta(name="description" content="#{ meta.description }")
+    - if meta.robots
+      %meta(name="robots" content="#{ meta.robots }")
+    %meta(property="og:type" content="article")
+    %meta(property="og:title" content="#{ current_page.title } | #{ site_title }")
+    %meta(property="og:description" content="#{ meta.description }")
+    %meta(property="og:url" content="#{ current_page.url }")
+    %meta(property="og:site_name" content="#{ site_title }")
+    %link(rel="stylesheet" href="#{ theme_url }/css/style.css")
+    %link(rel="stylesheet" href="#{ theme_url }/css/tomorrow-night.css")
+  %body
+    %header#header
+      .inner.clearfix
+        %h1
+          %a(href="#{ base_url }") = site_title
+        %ul.nav
+          - for page in pages
+            %li
+              %a(href="#{ page.url }") = page.title
+    %section#content
+      .inner
+        = content
+    %footer#footer
+      .inner
+        %a(href="https://github.com/PhileCMS/Phile") Phile
+        was made by
+        %a(href="https://github.com/PhileCMS") The PhileCMS Community
+    %script(src="#{ theme_url }/js/highlight.js")
+    :javascript
+      hljs.initHighlightingOnLoad();

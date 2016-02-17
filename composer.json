@@ -23,8 +23,6 @@
     "michelf/php-markdown": ">=1.4",
     "phpfastcache/phpfastcache": "~3.0",
     "symfony/yaml": "^2.7",
-    "phile-cms/plugin-installer-plugin": ">=1.0.2",
-    "infostreams/snippets": "^1.1.7",
-    "jacmoe/template-mthaml": "^1.0"
+    "phile-cms/plugin-installer-plugin": ">=1.0.2"
   }
 }

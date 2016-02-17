@@ -1,0 +1,20 @@
+{
+    "name": "jacmoe/template-mthaml",
+    "type": "phile-plugin",
+    "license": "MIT",
+    "description": "A PhileCMS plugin that provides a Mthaml template parser for PhileCMS",
+    "keywords": ["cms", "phile", "philecms", "template", "parser", "templateparser", "mthaml", "haml"],
+    "authors": [
+        {
+            "name": "Jacob Moen",
+            "email": "jacmoe.dk@gmail.com",
+            "homepage": "http://jacmoe.dk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "phile-cms/phile": ">=1",
+        "phile-cms/plugin-installer-plugin": ">=1",
+        "mthaml/mthaml": "^1.7"
+    }
+}
