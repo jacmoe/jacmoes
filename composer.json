@@ -25,7 +25,6 @@
     "symfony/yaml": "^2.7",
     "phile-cms/plugin-installer-plugin": ">=1.0.2",
     "infostreams/snippets": "^1.1.7",
-    "phile/xmlsitemap": "dev-master",
     "jacmoe/template-mthaml": "^1.0"
   }
 }
