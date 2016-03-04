@@ -1,28 +1,39 @@
 {
-  "name": "Jacmoes Cyber Soapbox",
-  "version": "1.0.0",
-  "type": "website",
-  "description": ".",
-  "keywords": ["jacmoe", "jacob", "moen", "blog", "philecms"],
-  "homepage": "http://jacmoe.dk",
+  "name": "jacmoe/pype",
+  "description": "Personal Yii Page Engine",
+  "keywords": ["yii2", "flat-file", "markdown", "git", "gulp", "wiki", "project template"],
+  "type": "project",
   "license": "MIT",
+  "minimum-stability": "dev",
   "authors": [
-    {
-      "name": "Jacob Moen",
-      "email": "jacmoe.dk@gmail.com",
-      "homepage": "http://jacmoe.dk",
-      "role": "Developer"
-    }
+      {
+          "name": "Jacob Moen",
+          "email": "jacmoe.dk@gmail.com"
+      }
   ],
-  "config": {
-    "vendor-dir": "lib/vendor"
+  "support": {
+      "issues": "https://github.com/jacmoe/pype/issues?state=open",
+      "source": "https://github.com/jacmoe/pype"
   },
   "require": {
     "php": ">=5.4.0",
-    "twig/twig": "1.15.*",
-    "michelf/php-markdown": ">=1.4",
-    "phpfastcache/phpfastcache": "~3.0",
-    "symfony/yaml": "^2.7",
-    "phile-cms/plugin-installer-plugin": ">=1.0.2"
-  }
+    "yiisoft/yii2": ">=2.0.5",
+    "jacmoe/yii2-mdpages-module": "@dev",
+    "jacmoe/yii2-tale-jade": "dev-master"
+  },
+  "require-dev": {
+    "yiisoft/yii2-codeception": "*",
+    "yiisoft/yii2-debug": "*",
+    "yiisoft/yii2-gii": "*",
+    "yiisoft/yii2-faker": "*"
+},
+  "config": {
+    "process-timeout": 1800
+  },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
 }

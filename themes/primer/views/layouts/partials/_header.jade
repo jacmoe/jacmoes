@@ -1,0 +1,8 @@
+header.masthead
+  .container
+    a.masthead-logo(href=Yii::$app->homeUrl)
+      img(height="35" width="80" title="Pype - Personal Yii Page Engine"
+        src=$pype_logo alt="Pype")
+    nav.masthead-nav.right
+      !=Html::a('Home', Page::url('index'))
+      !=Html::a('RSS', Url::to('/rss'))

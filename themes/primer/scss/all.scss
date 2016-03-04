@@ -1,0 +1,127 @@
+@import "1-common/all";
+@import "2-vendors/all";
+@import "3-global/all";
+
+.masthead {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background-color: $brand-gray-dark;
+
+  a {
+    color: rgba(255,255,255,.5);
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .masthead-logo {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #fff;
+    .mega-octicon {
+      float: left;
+      margin-right: .5rem;
+    }
+  }
+
+  @media (min-width: 34em) {
+    text-align: left;
+
+    .masthead-logo {
+      float: left;
+    }
+  }
+}
+
+.masthead-nav {
+  margin-top: 1rem;
+  font-size: 1rem;
+
+  a {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.25rem;
+    }
+  }
+
+  .active {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 34em) {
+    padding-top: 1rem;
+    border-top: .075rem solid rgba(255, 255, 255, 0.25);
+  }
+
+  @media (min-width: 34em) {
+    float: right;
+    margin-top: .5rem;
+  }
+}
+
+// Override the default layout to make it stack
+.docs-layout {
+  @media (max-width: 34em) {
+    > .column {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.description {
+  color: $brand-gray;
+}
+
+//
+// Footer
+//
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+  line-height: 1.75;
+  color: #7a7a7a;
+  border-top: 1px solid #eee;
+
+  strong {
+    color: #333;
+  }
+}
+
+//
+// Side menu
+//
+
+.docs-menu {
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+
+  @media (min-width: 34em) {
+    margin-right: 1rem;
+  }
+}
+
+.page-title + .markdown-body > p:first-child {
+  @extend .lead;
+}
+
+.toc {
+  position: relative;
+  float: right;
+  border: 1px dashed #999;
+  border-radius: 3px;
+  padding: 1em;
+  ol {
+    li {
+      list-style: none;
+    }
+  }
+}

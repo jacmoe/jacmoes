@@ -1,0 +1,35 @@
+include partials/_top.php
+
+doctype html
+html(lang=Yii::$app->language)
+  include partials/_head
+  body
+    -$view->beginBody()
+    include partials/_header
+    main.container
+      .columns.docs-layout
+        .one-fourth.column
+          nav.menu.docs-menu
+            span.menu-heading Navigation
+            !=Html::a('Home', Page::url('index'), ['class' => ($view->title == 'Pype') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Overview', Page::url('docs/overview'), ['class' => ($view->title == 'Overview') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Prerequisites', Page::url('docs/prerequisites'), ['class' => ($view->title == 'Prerequisites') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Configuration', Page::url('docs/configuration'), ['class' => ($view->title == 'Configuration') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Installation', Page::url('docs/install'), ['class' => ($view->title == 'Installation') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Workflow', Page::url('docs/workflow'), ['class' => ($view->title == 'Workflow') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Syntax', Page::url('docs/syntax'), ['class' => ($view->title == 'Syntax') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Theming', Page::url('docs/theming'), ['class' => ($view->title == 'Theming') ? 'menu-item selected' : 'menu-item'])
+            !=Html::a('Advanced Topics', Page::url('docs/advanced-topics'), ['class' => ($view->title == 'Advanced topics') ? 'menu-item selected' : 'menu-item'])
+          nav.menu.docs-menu
+            span.menu-heading External links
+            !=Html::a('Pype on Github', 'https://github.com/jacmoe/pype', ['class' => 'menu-item', 'target' => '_blank', 'rel' => 'external'])
+            !=Html::a(Html::img("https://camo.githubusercontent.com/9ceaa1c06e5c896aed29a269078c293ab4bb8bdb/68747470733a2f2f6261646765732e6769747465722e696d2f6a61636d6f652f707970652e737667", array('style' => 'max-width:100%;', 'data-canonical-src' => 'https://badges.gitter.im/jacmoe/pype.svg', 'alt' => 'Join the chat at https://gitter.im/jacmoe/pype', 'title' => 'Join the chat at https://gitter.im/jacmoe/pype')), 'https://gitter.im/jacmoe/pype?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge', ['class' => 'menu-item', 'target' => '_blank', 'rel' => 'external'])
+            !=Html::a(Html::img("https://camo.githubusercontent.com/2db1cd364c3f174c72d4c97430c35cb262dc9685/68747470733a2f2f706f7365722e707567782e6f72672f6a61636d6f652f707970652f762f737461626c65", array('style' => 'max-width:100%;', 'data-canonical-src' => 'https://poser.pugx.org/jacmoe/pype/v/stable', 'alt' => 'Latest Stable Version', 'title' => 'Pype @ Packagist')), 'https://packagist.org/packages/jacmoe/pype', ['class' => 'menu-item', 'target' => '_blank', 'rel' => 'external'])
+        .three-fourths.column
+          !=$content
+      .columns
+        hr
+        include partials/_footer
+    //-!=Html::jsFile(YII_DEBUG ? '@web/themes/primer/js/all.js' : '@web/themes/primer/js/all.min.js?v=' . filemtime(Yii::getAlias('@webroot/themes/primer/js/all.min.js')))
+    -$view->endBody()
+  -$view->endPage()
