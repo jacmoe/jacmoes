@@ -12,5 +12,5 @@ $view->registerLinkTag([
   'href' => Url::to('rss', true),
   ]);
 $theme = $view->theme;
-$asset = app\themes\primer\assets\ThemeAsset::register($view);
+$asset = app\themes\zurbie\assets\ThemeAsset::register($view);
 $pype_logo = $asset->baseUrl . '/pype_w.svg';

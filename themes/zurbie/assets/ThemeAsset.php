@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\themes\primer\assets;
+namespace app\themes\zurbie\assets;
 
 use yii\web\AssetBundle;
 
@@ -15,7 +15,7 @@ use yii\web\AssetBundle;
  */
 class ThemeAsset extends AssetBundle
 {
-    public $sourcePath = '@app/themes/primer/dist';
+    public $sourcePath = '@app/themes/zurbie/dist';
     public $css = [
         YII_ENV_DEV ? 'css/all.css' : 'css/all.min.css'
     ];
