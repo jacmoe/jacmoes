@@ -41,7 +41,7 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
             . $align . "\">";
     }
 
-    public function lightbox($title, $source, $target, $align ="left")
+    public function lightbox($title, $source, $target, $align ="left", $size = "")
     {
         $target_url = Url::home(true) . "images/" . $target;
         $image_url = Url::home(true) . "images/" . $source;

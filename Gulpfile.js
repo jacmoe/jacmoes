@@ -36,18 +36,46 @@ runSequence = require('run-sequence');
 var theme = 'zurbie';
 
 var PATHS = {
+    sass: [
+        'bower_components/foundation-sites/scss',
+        'bower_components/motion-ui/src'
+    ],
     javascript: [
-        'vendor/bower/jquery/dist/jquery.js',
-        'themes/primer/js/jquery.sticky.js',
-        'themes/primer/js/lightbox.js',
-        'themes/primer/js/custom.js'
+        'bower_components/jquery/dist/jquery.js',
+        'bower_components/what-input/what-input.js',
+        // Core Foundation files
+        'bower_components/foundation-sites/js/foundation.core.js',
+        'bower_components/foundation-sites/js/foundation.util.*.js',
+        // Individual Foundation components
+        // 'bower_components/foundation-sites/js/foundation.abide.js',
+        // 'bower_components/foundation-sites/js/foundation.accordion.js',
+        // 'bower_components/foundation-sites/js/foundation.accordionMenu.js',
+        // 'bower_components/foundation-sites/js/foundation.drilldown.js',
+        // 'bower_components/foundation-sites/js/foundation.dropdown.js',
+        // 'bower_components/foundation-sites/js/foundation.dropdownMenu.js',
+        // 'bower_components/foundation-sites/js/foundation.equalizer.js',
+        // 'bower_components/foundation-sites/js/foundation.interchange.js',
+        // 'bower_components/foundation-sites/js/foundation.magellan.js',
+        // 'bower_components/foundation-sites/js/foundation.offcanvas.js',
+        // 'bower_components/foundation-sites/js/foundation.orbit.js',
+        // 'bower_components/foundation-sites/js/foundation.responsiveMenu.js',
+        // 'bower_components/foundation-sites/js/foundation.responsiveToggle.js',
+        // 'bower_components/foundation-sites/js/foundation.reveal.js',
+        // 'bower_components/foundation-sites/js/foundation.slider.js',
+        // 'bower_components/foundation-sites/js/foundation.sticky.js',
+        // 'bower_components/foundation-sites/js/foundation.tabs.js',
+        // 'bower_components/foundation-sites/js/foundation.toggler.js',
+        // 'bower_components/foundation-sites/js/foundation.tooltip.js',
+        // Own js
+        'themes/zurbie/js/lightbox.js'
+        //'themes/' + theme + '/js/custom.js'
     ]
 };
 
-//    includePaths: PATHS.sass
 var sassOptions = {
     errLogToConsole: true,
-    outputStyle: 'expanded'
+    outputStyle: 'expanded',
+    includePaths: PATHS.sass
 };
 
 var autoprefixerOptions = {

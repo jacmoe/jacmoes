@@ -1,0 +1,21 @@
+{
+  "name": "jacmoe",
+  "version": "1.0.0",
+  "authors": [
+    "Jacob Moen <jacmoe@gmail.com>"
+  ],
+  "description": "Jacmoes Cyber Soapbox",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor"
+  ],
+  "dependencies": {
+    "foundation-sites": "~6.2.0",
+    "motion-ui": "~1.2.2"
+  },
+  "private": true
+}
