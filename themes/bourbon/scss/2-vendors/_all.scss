@@ -1,3 +1,9 @@
+@import "reset";
+@import "bourbon";
+@import "core/base";
+@import "neat";
+
 @import "lightbox";
 @import "anchor";
-@import "../../../vendor/scrivo/highlight.php/styles/solarized-light";
+@import "../../../vendor/scrivo/highlight.php/styles/railscasts";
+@import "font-awesome";

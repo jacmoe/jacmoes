@@ -1,3 +1,39 @@
 .imagewrap {
   width: auto;
 }
+
+.container {
+  @include margin(null auto);
+  @include padding(null $base-spacing);
+  max-width: 1200px;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearfix { @include clearfix; }
+
+body {
+  margin: 0 0 ($base-spacing * 2);
+}
+img.left {
+  margin-right: 1rem;
+}
+
+img.right {
+  margin-left: 1rem;
+}
+
+.th {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.quiet {
+  color: #6f6f6f;
+  font-style: italic;
+  //font-size: 0.8em;
+  font-size: modular-scale(-1);
+}

@@ -33,6 +33,11 @@ gulpif = require('gulp-if'),
 runSequence = require('run-sequence');
 
 var PATHS = {
+    sass: [
+        'bower_components/bourbon/app/assets/stylesheets/',
+        'bower_components/neat/app/assets/stylesheets/',
+        'bower_components/font-awesome/scss/'
+    ],
     javascript: [
         'vendor/bower/jquery/dist/jquery.js',
         'themes/bourbon/js/jquery.sticky.js',
@@ -41,10 +46,10 @@ var PATHS = {
     ]
 };
 
-//    includePaths: PATHS.sass
 var sassOptions = {
     errLogToConsole: true,
-    outputStyle: 'expanded'
+    outputStyle: 'expanded',
+    includePaths: PATHS.sass
 };
 
 var autoprefixerOptions = {
@@ -83,7 +88,7 @@ gulp.task('scripts', function() {
 // Copy fonts
 gulp.task('fonts', function() {
     return gulp.src([
-        'themes/bourbon/scss/2-vendors/font-awesome/fonts/*'
+        'bower_components/font-awesome/fonts/*'
     ])
     .pipe(gulp.dest('./themes/bourbon/dist/fonts'));
 });
@@ -103,7 +108,7 @@ gulp.task('watch', function() {
 
     // Initialize Browsersync
     browsersync.init({
-        proxy: "https://pype.dev"
+        proxy: "https://local.jacmoe.dk"
     });
 
     // Watch .scss files
