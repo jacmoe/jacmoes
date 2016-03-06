@@ -27,7 +27,6 @@ img.right {
 }
 
 .th {
-  max-width: 100%;
   margin-bottom: 1rem;
 }
 
@@ -36,4 +35,8 @@ img.right {
   font-style: italic;
   //font-size: 0.8em;
   font-size: modular-scale(-1);
+}
+.imagewrap img {
+  max-width:100%;
+  height:auto;
 }

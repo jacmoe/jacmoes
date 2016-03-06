@@ -6,7 +6,7 @@ use yii\widgets\Breadcrumbs;
 use app\components\Pype;
 use jacmoe\mdpages\helpers\Page;
 $view->registerLinkTag([
-  'title' => 'RSS Feed',
+  'title' => 'Jacmoes Cyber Soapbox RSS Feed',
   'rel' => 'alternate',
   'type' => 'application/rss+xml',
   'href' => Url::to('rss', true),

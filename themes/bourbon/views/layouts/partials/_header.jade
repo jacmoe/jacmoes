@@ -1,8 +1,10 @@
 header.masthead
   .container
     a.masthead-logo(href=Yii::$app->homeUrl)
-      img(height="35" width="80" title="Pype - Personal Yii Page Engine"
-        src=$pype_logo alt="Pype")
+      img(height="35" width="80" title="Jacmoes Cyber Soapbox"
+        src=$pype_logo alt="Jacmoes Cyber Soapbox")
     nav.masthead-nav.right
       !=Html::a('Home', Page::url('index'))
+      !=Html::a('Blog', Page::url('blog'))
+      !=Html::a('About', Page::url('about'))
       !=Html::a('RSS', Url::to('/rss'))
