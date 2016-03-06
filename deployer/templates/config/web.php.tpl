@@ -60,6 +60,7 @@ $config = [
             'appendTimestamp' => true,
         ],
         'view' => [
+            'class' => 'jacmoe\mdpages\components\View',
             'defaultExtension' => 'jade',
             'renderers' => [
                 'jade' => [
@@ -91,6 +92,11 @@ $config = [
             'github_branch' => '{{app.github.branch}}',
             'absolute_wikilinks' => true,
             'generate_page_toc' => true,
+            'feed_title' => 'Blog posts',
+            'feed_description' => 'Jacmoes Cyber Soapbox Rss Feed',
+            'feed_author_email' => 'jacmoe.dk@gmail.com',
+            'feed_author_name' => 'Jacob Moen',
+            'feed_filtering' => true,
             'snippets' => $snippets,
         ],
     ],

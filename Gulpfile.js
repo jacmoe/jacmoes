@@ -88,7 +88,8 @@ gulp.task('scripts', function() {
 // Copy fonts
 gulp.task('fonts', function() {
     return gulp.src([
-        'bower_components/font-awesome/fonts/*'
+        'bower_components/font-awesome/fonts/*',
+        'themes/bourbon/fonts/*'
     ])
     .pipe(gulp.dest('./themes/bourbon/dist/fonts'));
 });
