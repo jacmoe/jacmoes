@@ -96,6 +96,7 @@ $config = [
             'feed_description' => 'Jacmoes Cyber Soapbox Rss Feed',
             'feed_author_email' => 'jacmoe.dk@gmail.com',
             'feed_author_name' => 'Jacob Moen',
+            'feed_ordering' => 'datetime DESC',
             'feed_filtering' => true,
             'snippets' => $snippets,
         ],
