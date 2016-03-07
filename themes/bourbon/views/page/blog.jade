@@ -7,7 +7,7 @@ include partials/_breadcrumbs.php
     .description
       p: !=$page->description
 hr
+-$posts = Page::pages('datetime DESC', array('published', '==', true));
 .content
-  |BLOG
-  !=$content
-.content
+  each $post in $posts
+    include partials/_postentry
