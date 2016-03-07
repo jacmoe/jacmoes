@@ -29,9 +29,9 @@ class Pype {
         if($image === true)
         {
             if($small) {
-                return '<a href="https://pype.jacmoe.dk/" rel="external"><img width="36" height="16" title="Powered by Pype" alt="Powered by Pype" src="' . Pype::logo($color, $small) . '"></a>';
+                return '<a href="https://pype.jacmoe.dk/" rel="external" target="_blank"><img width="36" height="16" title="Powered by Pype" alt="Powered by Pype" src="' . Pype::logo($color, $small) . '"></a>';
             } else {
-                return '<a href="https://pype.jacmoe.dk/" rel="external"><img width="54" height="24" title="Powered by Pype" alt="Powered by Pype" src="' . Pype::logo($color) . '"></a>';
+                return '<a href="https://pype.jacmoe.dk/" rel="external" target="_blank"><img width="54" height="24" title="Powered by Pype" alt="Powered by Pype" src="' . Pype::logo($color) . '"></a>';
             }
         }
 
