@@ -1,5 +1,6 @@
 /**
- * the sticky footer mixin
+ * The sticky footer mixin
+ * Courtesy of Zoe Rooney : http://codepen.io/zoerooney/pen/vtdFw
  **/
 @mixin sticky-footer($footer-height, $wrapper-selector: unquote("#wrapper"), $container-selector: unquote("#container"), $footer-selector: unquote("#footer")) {
   html, body {
