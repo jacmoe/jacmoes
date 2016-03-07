@@ -5,7 +5,18 @@ footer {
   background: $dark-gray;
   color: transparentize($light-gray, 0.6);
   .footer-wrapper {
+    font-size: modular-scale(-1);
+    padding-top: 2em;
     @include clearfix;
     @include outer-container;
+    .footer-content {
+      @include row();
+      .powered {
+        @include span-columns(5);
+      }
+      .copyright {
+        @include span-columns(5);
+      }
+    }
   }
 }
