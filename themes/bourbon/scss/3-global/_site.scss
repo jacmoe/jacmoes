@@ -2,8 +2,17 @@
   width: auto;
 }
 
+%padded {
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+
 .container {
   @include outer-container();
+}
+
+main {
+  @extend %padded;
 }
 
 .left {

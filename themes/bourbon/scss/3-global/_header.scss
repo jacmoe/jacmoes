@@ -1,4 +1,5 @@
 header {
+  @extend %padded;
   background: $dark-gray;
   padding: 0.4em;
   margin-bottom: 2em;
