@@ -1,8 +1,25 @@
 @charset 'utf-8';
-
+// /*
+// * This file is part of
+// *  _ __  _   _ _ __   ___
+// * | '_ \| | | | '_ \ / _ \
+// * | |_) | |_| | |_) |  __/
+// * | .__/ \__, | .__/ \___|
+// * |_|    |___/|_|
+// *                 Personal Yii Page Engine
+// *
+// *	Copyright (c) 2016 Jacob Moen
+// *	Licensed under the MIT license
+// */
+// Common stuff not using vendors
 @import "1-common/all";
+// Vendors - third-party code
 @import "2-vendors/all";
+// Global stuff using vendor code
 @import "3-global/all";
+// Components - buttons, etc
 @import "4-components/all";
+// Page specific
 @import "5-pages/all";
+// When page specific stuff gets too big
 @import "6-elements/all";
