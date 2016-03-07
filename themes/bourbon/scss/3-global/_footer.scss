@@ -13,9 +13,15 @@ footer {
       @include row();
       .powered {
         @include span-columns(5);
+        .dreamhost {
+          position: relative;
+          top: 0.5em;
+        }
       }
       .copyright {
         @include span-columns(5);
+        position: relative;
+        top: 0.4em;
       }
     }
   }
