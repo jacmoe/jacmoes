@@ -1,9 +1,10 @@
-header.masthead
+header
   .container
-    a.masthead-logo(href=Yii::$app->homeUrl)
-      img(height="36" width="36" title="Jacmoes Cyber Soapbox"
-        src=$pype_logo alt="Jacmoes Cyber Soapbox")
-      |Jacmoes Cyber Soapbox
+    span.logo
+      a(href=Yii::$app->homeUrl)
+        img(height="36" width="36" title="Jacmoes Cyber Soapbox"
+          src=$pype_logo alt="Jacmoes Cyber Soapbox")
+        |Jacmoes Cyber Soapbox
     nav.masthead-nav.right
       !=Html::a('Home', Page::url('index'))
       !=Html::a('Blog', Page::url('blog'))

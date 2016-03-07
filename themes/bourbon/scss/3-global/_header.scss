@@ -1,4 +1,13 @@
 header {
   background: $dark-gray;
   padding: 0.4em;
+  @include linx($medium-gray, $medium-gray, $light-gray, $light-gray);
+  .logo {
+    font-size: modular-scale(2);
+    @include linx($light-gray, $light-gray, #fff, #fff);
+    img {
+      position: relative;
+      top: 0.18em;
+    }
+  }
 }
