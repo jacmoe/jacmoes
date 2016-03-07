@@ -1,5 +1,6 @@
 include partials/_viewtop.php
 //-include partials/_breadcrumbs.php
+include ../common/_mixins
 .columns
   .one-third.column
     h1: !=$page->title
@@ -10,8 +11,4 @@ hr
 .content
   |POST
   !=$content
-.content
-  hr
-  !=Html::a(' Edit on Github', $view->params['github-link'], array('target' => '_blank', 'class' => 'fa fa-github right'))
-  p: strong: small Contributors to this page
-  include partials/_contributors.php
+  +icondiv('heart')
