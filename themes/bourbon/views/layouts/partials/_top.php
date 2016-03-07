@@ -13,4 +13,4 @@ $view->registerLinkTag([
   ]);
 $theme = $view->theme;
 $asset = app\themes\bourbon\assets\ThemeAsset::register($view);
-$pype_logo = $asset->baseUrl . '/pype_w.svg';
+$pype_logo = $asset->baseUrl . '/logo36.png';
