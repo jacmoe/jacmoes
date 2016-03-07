@@ -1,0 +1,11 @@
+
+@include sticky-footer(4em);
+
+footer {
+  background: $dark-gray;
+  color: transparentize($light-gray, 0.6);
+  .footer-wrapper {
+    @include clearfix;
+    @include outer-container;
+  }
+}
