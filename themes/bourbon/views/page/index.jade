@@ -3,5 +3,5 @@ include ../common/_mixins
 .content
   +icondiv('heart')
 .content
-  -$post = Page::pages('datetime DESC')->first()
+  -$post = Page::pages('datetime DESC', array('published', '==', true))->first();
   include partials/_postentry
