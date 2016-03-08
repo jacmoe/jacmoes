@@ -2,8 +2,8 @@
 -if(Url::base(true) != 'https://local.jacmoe.dk') {
   :js
     var disqus_config = function () {
-        this.page.url = '#{ Url::to($page->url, true) }';
-        this.page.identifier = '#{ $post->disqusid }';
+        this.page.url = Url::to($page->url, true);
+        this.page.identifier = $post->disqusid;
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
