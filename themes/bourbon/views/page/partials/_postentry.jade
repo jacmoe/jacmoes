@@ -1,2 +1,29 @@
-!=Html::a($post->title, Url::to($post->url));
 .blogentry(itemscope="itemscope" itemtype="http://schema.org/BlogPosting")
+  article.post
+    .postaside
+      a.th.small.image(href=Url::to($post->url, true))
+        img(width="200" height="150"
+          src=Url::to('images/' . $post->thumb, true)
+          title=$post->title
+          alt=$post->title itemprop="image")
+    .postmain
+      .post-description
+        h2.content-title
+          a.header(itemprop="name"
+            href=Url::to($post->url, true))
+            span(itemprop="headline"): =$post->title
+        p.author-name.quiet
+          span.when
+            time(itemprop="dateCreated"
+              datetime=$post->datetime)
+              =$post->datetime
+            time(itemprop="datePublished"
+              datetime=$post->datetime)
+            span(itemprop="author") Jacob Moen
+        .post-description.copy
+          p(itemprop="description")
+            =$post->description
+          a.button.small(href=Url::to($post->url, true)
+            title=$post->title)
+            Read More
+  hr
