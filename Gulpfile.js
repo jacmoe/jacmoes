@@ -39,9 +39,9 @@ var PATHS = {
         'bower_components/font-awesome/scss/'
     ],
     javascript: [
-        'vendor/bower/jquery/dist/jquery.js',
+        'bower_components/jquery/dist/jquery.js',
+        'bower_components/lightbox2/dist/js/lightbox.js',
         'themes/bourbon/js/jquery.sticky.js',
-        'themes/bourbon/js/lightbox.js',
         'themes/bourbon/js/custom.js'
     ]
 };
