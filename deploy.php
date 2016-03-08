@@ -37,9 +37,9 @@ task('deploy:configure_composer', function () {
 // build assets
 task('deploy:build_assets', function () {
    runLocally('gulp build');
-   upload(__DIR__ . '/themes/primer/dist/css', '{{release_path}}/themes/primer/dist/css');
-   upload(__DIR__ . '/themes/primer/dist/js', '{{release_path}}/themes/primer/dist/js');
-   upload(__DIR__ . '/themes/primer/dist/fonts', '{{release_path}}/themes/primer/dist/fonts');
+   upload(__DIR__ . '/themes/bourbon/dist/css', '{{release_path}}/themes/bourbon/dist/css');
+   upload(__DIR__ . '/themes/bourbon/dist/js', '{{release_path}}/themes/bourbon/dist/js');
+   upload(__DIR__ . '/themes/bourbon/dist/fonts', '{{release_path}}/themes/bourbon/dist/fonts');
 })->desc('Build assets');
 
 // update symlink to images dir

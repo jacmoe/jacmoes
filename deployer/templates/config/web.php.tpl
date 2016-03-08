@@ -3,10 +3,10 @@
 $params = require(__DIR__ . '/params.php');
 $snippets = require(__DIR__ . '/snippets.php');
 
-$theme = 'primer';
+$theme = 'bourbon';
 
 $config = [
-    'id' => 'pype',
+    'id' => 'jacmoes',
     'basePath' => dirname(__DIR__),
     'defaultRoute' => '/wiki/page',
     'layout' => '@app/themes/' . $theme . '/views/layouts/main.jade',
