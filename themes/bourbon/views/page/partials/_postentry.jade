@@ -1,11 +1,12 @@
 .postentry(itemscope="itemscope" itemtype="http://schema.org/BlogPosting")
   article.post
     .postaside
-      a.th.small.image(href=Url::to($post->url, true))
-        img(width="200" height="150"
-          src=Url::to('images/' . $post->thumb, true)
-          title=$post->title
-          alt=$post->title itemprop="image")
+      span.imagewrap
+        a.th.small.image(href=Url::to($post->url, true))
+          img(width="200" height="150"
+            src=Url::to('images/' . $post->thumb, true)
+            title=$post->title
+            alt=$post->title itemprop="image")
     .postmain
       .post-description
         h2.content-title
