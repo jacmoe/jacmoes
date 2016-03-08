@@ -18,9 +18,25 @@ main {
 .left {
   float: left;
 }
+
 .right {
   float: right;
 }
+
+img.right {
+  float: right;
+  @include media($mobile) {
+    float: none;
+  }
+}
+
+img.left {
+  float: left;
+  @include media($mobile) {
+    float: none;
+  }
+}
+
 .clearfix { @include clearfix; }
 
 body {
@@ -47,4 +63,17 @@ img.right {
 .imagewrap img {
   max-width:100%;
   height:auto;
+}
+
+.postheader {
+  line-height: 0.1em;
+  .title {
+    margin-bottom: -0.5em;
+  }
+  .description {
+    color: tint($dark-gray, 50%);
+    font-style: italic;
+    margin-top: 0;
+    font-size: modular-scale(1);
+  }
 }
