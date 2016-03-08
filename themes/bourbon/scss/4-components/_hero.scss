@@ -33,23 +33,25 @@
 
       h1 {
         color: $hero-color;
-        font-size: 1.6em;
+        font-size: 1.8em;
         margin-bottom: 0.5em;
 
-        //@include media($large) {
-        //  font-size: 1.8em;
-        //}
+        @include media($mobile) {
+          font-size: 1.6em;
+        }
       }
 
       p {
         color: $hero-color;
         line-height: 1.4em;
         margin: 0 auto 2em auto;
+        font-size: 1.1em;
+        max-width: 40%;
 
-        //@include media($large) {
-        //  font-size: 1.1em;
-        //  max-width: 40%;
-        //}
+        @include media($mobile) {
+          font-size: 0.8em;
+          max-width: 80%;
+        }
       }
     }
   }
