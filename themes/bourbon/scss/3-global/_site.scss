@@ -66,14 +66,15 @@ img.right {
 }
 
 .postheader {
-  line-height: 0.1em;
+  //line-height: 0.1em;
   .title {
-    margin-bottom: -0.5em;
+    margin-bottom: -1em;
   }
   .description {
     color: tint($dark-gray, 50%);
     font-style: italic;
     margin-top: 0;
-    font-size: modular-scale(1);
+    margin-bottom: -1em;
+    font-size: 1.3em;
   }
 }
