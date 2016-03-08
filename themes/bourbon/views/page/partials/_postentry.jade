@@ -1,4 +1,4 @@
-.blogentry(itemscope="itemscope" itemtype="http://schema.org/BlogPosting")
+.postentry(itemscope="itemscope" itemtype="http://schema.org/BlogPosting")
   article.post
     .postaside
       a.th.small.image(href=Url::to($post->url, true))
@@ -15,10 +15,10 @@
         p.author-name.quiet
           span.when
             time(itemprop="dateCreated"
-              datetime=$post->datetime)
-              =$post->datetime
+              datetime=date('c', $post->datetime))
+              +date($post->datetime)
             time(itemprop="datePublished"
-              datetime=$post->datetime)
+              datetime=date('c', $post->datetime))
             span(itemprop="author") Jacob Moen
         .post-description.copy
           p(itemprop="description")

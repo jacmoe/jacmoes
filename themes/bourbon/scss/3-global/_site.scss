@@ -64,17 +64,3 @@ img.right {
   max-width:100%;
   height:auto;
 }
-
-.postheader {
-  //line-height: 0.1em;
-  .title {
-    margin-bottom: -1em;
-  }
-  .description {
-    color: tint($dark-gray, 50%);
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: -1em;
-    font-size: 1.3em;
-  }
-}

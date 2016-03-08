@@ -1,0 +1,17 @@
+.postentry {
+  article.post {
+    @include row();
+    .postaside {
+      @include span-columns(3);
+      @include media($mobile) {
+        @include span-columns(4);
+      }
+    }
+    .postmain {
+      @include span-columns(7);
+      @include media($mobile) {
+        @include span-columns(4);
+      }
+    }
+  }
+}
