@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('UTC');
 defined('YII_DEBUG') or define('YII_DEBUG', {{app.debug}});
 defined('YII_ENV') or define('YII_ENV', '{{app.stage}}');
 
