@@ -47,12 +47,17 @@ task('deploy:images_symlink', function () {
     run('php {{release_path}}/yii mdpages/pages/symlink');
 })->desc('Update images symlink');
 
-task('deploy:flush_cache', function () {
+task('flush_cache', function () {
     run('php {{release_path}}/yii cache/flush-all');
 })->desc('Flush the cache');
+
+task('flush_templates', function() {
+    $templatePath = "{{deploy_path}}/shared/runtime/Jade";
+    run("if [ -d $(echo $templatePath) ]; then rm -rf $templatePath; fi");
+})->desc('Flush the templates');
 
 after('deploy:shared', 'deploy:configure');
 before('deploy:vendors', 'deploy:configure_composer');
 after('deploy:vendors', 'deploy:build_assets');
 after('deploy:build_assets', 'deploy:images_symlink');
-after('deploy:images_symlink', 'deploy:flush_cache');
+//after('deploy:images_symlink', 'deploy:flush_cache');
