@@ -7,6 +7,13 @@ include ../common/_mixins
   .description
     p: !=$page->description
   hr
+.clearfix
+  span.updated
+    small
+      +date($page->datetime)
+  span.tags
+    small
+      !=$page->tags
 .content
   !=$content
   +icondiv('heart')
