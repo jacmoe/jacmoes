@@ -98,6 +98,7 @@ $config = [
             'feed_author_name' => 'Jacob Moen',
             'feed_ordering' => 'datetime DESC',
             'feed_filtering' => true,
+            'generate_contributor_data' => false,
             'snippets' => $snippets,
         ],
     ],
