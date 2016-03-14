@@ -36,6 +36,7 @@
 
 .button {
   @include bbb-flat-style($base-font-color, white);
+    &:link,
     &:hover,
     &:focus {
       color: shade(white,10%);

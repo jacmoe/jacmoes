@@ -42,6 +42,7 @@ var PATHS = {
         'bower_components/jquery/dist/jquery.js',
         'bower_components/lightbox2/dist/js/lightbox.js',
         'themes/bourbon/js/jquery.sticky.js',
+        'themes/bourbon/js/jquery.cookiesdirective.js',
         'themes/bourbon/js/custom.js'
     ]
 };
