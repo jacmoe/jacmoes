@@ -6,7 +6,7 @@ include ../common/_mixins
     h1: !=$page->title
   .description
   hr
--$posts = Page::pages('datetime DESC', array('published', '==', true));
+include partials/_postlist.php
 .content
   each $post in $posts
     include partials/_postentry
