@@ -20,7 +20,7 @@
               +date($post->datetime)
             time(itemprop="datePublished"
               datetime=date('c', $post->datetime))
-            span(itemprop="author") Jacob Moen
+            //-span(itemprop="author") Jacob Moen
         .post-description.copy
           p(itemprop="description")
             =$post->description
