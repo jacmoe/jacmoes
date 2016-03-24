@@ -64,3 +64,22 @@ img.right {
   max-width:100%;
   height:auto;
 }
+
+$selection-color: mix($base-background-color, yellow, 85%);
+
+::selection {
+    text-shadow: none !important;
+    background: $selection-color;
+    //color: $gray-darker;
+}
+
+::-moz-selection {
+    text-shadow: none !important;
+    background: $selection-color;
+    //color: $gray-darker;
+}
+
+code {
+  background-color: $selection-color;
+  color: inherit;
+}
