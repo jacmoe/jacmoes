@@ -1,0 +1,34 @@
+# Your project's server will run on proxy
+PROXY: "https://local.jacmoe.dk"
+
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Path to dist folder
+  dist: "themes/bourbon/assets/dist"
+  # Path to source folder
+  src: "themes/bourbon/assets/src"
+  # Paths to fonts
+  fonts:
+    - "themes/bourbon/assets/src/fonts/**/*"
+    - "bower_components/font-awesome/fonts/**/*"
+  # Paths to images
+  images:
+    - "themes/bourbon/assets/src/img/**/*"
+  # Paths to Sass libraries, which can then be loaded with @import
+  sass:
+    - "bower_components/bourbon/app/assets/stylesheets"
+    - "bower_components/neat/app/assets/stylesheets"
+    - "bower_components/font-awesome/scss"
+    - "vendor/scrivo/highlight.php/styles"
+  # Paths to JavaScript libraries, which are combined into one file
+  javascript:
+    - "bower_components/jquery/dist/jquery.js"
+    - "bower_components/lightbox2/dist/js/lightbox.js"
+    - "themes/bourbon/assets/src/js/jquery.sticky.js"
+    - "themes/bourbon/assets/src/js/jquery.cookiesdirective.js"
+    - "themes/bourbon/assets/src/js/custom.js"
