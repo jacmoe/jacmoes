@@ -22,7 +22,7 @@ task('local-config', function () {
                 if($matches[1] === 'release_path') {
                     $matches[1] = 'deploy_path';
                 }
-                $value = get()->get($matches[1]);
+                $value = get($matches[1]);
                 if (is_null($value) || is_bool($value) || is_array($value)) {
                     $value = var_export($value, true);
                 }
@@ -98,4 +98,4 @@ task('local-config', function () {
         }
 
     }
-})->desc('Configures your local development getironment')->onlyForStage('local');
+})->desc('Configures your local development environment')->onlyForStage('local');

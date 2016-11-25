@@ -50,8 +50,8 @@ task('deploy:configure', function () {
         ->in(getcwd() . '/deployer/templates');
 
     $tmpDir = sys_get_temp_dir();
-    $deployDir = ('deploy_path');
-    $releaseDir = ('release_path');
+    $deployDir = get('deploy_path');
+    $releaseDir = get('release_path');
 
     /* @var $file \Symfony\Component\Finder\SplFileInfo */
     foreach ($iterator as $file) {
