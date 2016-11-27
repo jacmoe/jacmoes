@@ -1,5 +1,5 @@
 
-@include sticky-footer(4em);
+@include sticky-footer(6em);
 
 footer {
   background: $dark-gray;
@@ -25,7 +25,7 @@ footer {
         }
         .dreamhost {
           position: relative;
-          top: 0.5em;
+          top: -1.5em;
         }
       }
       .copyright {
