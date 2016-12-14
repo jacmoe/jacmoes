@@ -14,4 +14,4 @@ $view->registerLinkTag([
 $theme = $view->theme;
 $asset = app\themes\bourbon\assets\ThemeAsset::register($view);
 $pype_logo = $asset->baseUrl . '/img/logo36.png';
-$uber_logo = $asset->baseUrl . '/img/ubernaut_black.png';
+$uber_logo = $asset->baseUrl . '/img/jacmoe_ubernaut.png';
