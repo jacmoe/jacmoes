@@ -1,11 +1,3 @@
-//- block Disqus script on local host
--if(Url::base(true) != 'https://local.jacmoe.dk') {
-  include _disqus.js
-  noscript
-    |Please enable JavaScript to view the
-    a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
-  a.dsq-brlink(href="http://disqus.com")
-    |blog comments powered by
-    span.logo-disqus Disqus
--}
-<script type="text/javascript" src="/hashover/hashover.js"></script>
+script(src="/hashover/hashover.js")
+noscript
+  |Please enable JavaScript to view the comments
