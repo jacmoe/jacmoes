@@ -1,0 +1,11 @@
+/* TEAM */
+	Jacob Moen
+	Contact: jacmoe.dk [at] gmail.com
+	Twitter: @jacmoe
+	From: Holbaek, Zealand, Denmark
+
+/* SITE */
+	Last update: 2016/28/12
+	Language: English
+	Doctype: HTML5
+	IDE: Emacs, FileZilla, Gulp.js, Deployer.php
