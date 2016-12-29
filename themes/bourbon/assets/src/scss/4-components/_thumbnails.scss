@@ -63,6 +63,8 @@ $thumb-transition-speed: 200ms !default;
   display: inline-block;
   line-height: 0;
   max-width: 100%;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 
   &:hover,
   &:focus {

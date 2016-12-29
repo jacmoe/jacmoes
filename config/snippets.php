@@ -13,6 +13,15 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
         return Gallery::gallery($gallery);
     }
 
+    public function div($class = null, $end = false)
+    {
+        if(!$end) {
+            return (is_null($class)) ? "<div>" : "<div class=\"$class\">";
+        } else {
+            return "</div>";
+        }
+    }
+
     public function clearfix($text=null)
     {
         return "<div class=\"clearfix\"></div>";
@@ -21,7 +30,7 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
     public function icondiv($icon, $clear=false)
     {
         if($clear) {
-          return "<div class=\"ui horizontal clearing divider\">
+            return "<div class=\"ui horizontal clearing divider\">
             <i class=\"fi-".$icon."\"></i></div>";
         }
         return "<div class=\"ui horizontal divider\">

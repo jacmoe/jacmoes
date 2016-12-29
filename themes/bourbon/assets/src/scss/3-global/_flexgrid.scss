@@ -1,0 +1,159 @@
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
+  .flex-grid-thirds {
+    display: block;
+  }
+}
+
+// Taken from http://slides.com/ehayman/deck-5#/
+// It's Time To Ditch The Grid System - Emily Hayman
+@mixin flexbox-equal-col($padding: 20px, $whitespace: margin, $element: "div", $column-breakpoint: 0) {
+  display: flex;
+
+  > #{$element} {
+    flex-basis: 0;
+    flex-grow: 1;
+    #{$whitespace}-left: (1/2) * $padding;
+    #{$whitespace}-right: (1/2) * $padding;
+
+    &:first-child {
+      #{$whitespace}-left: 0;
+    }
+
+    &:last-child {
+      #{$whitespace}-right: 0;
+    }
+  }
+
+  @if ($column-breakpoint != 0) {
+    @media (max-width:$column-breakpoint) {
+      flex-direction: column;
+
+      > #{$element} {
+        flex-basis: auto;
+        #{$whitespace}-left: 0;
+        #{$whitespace}-right: 0;
+
+        + #{$element} {
+          #{$whitespace}-top: $column-padding;
+        }
+      }
+    }
+  }
+}
+//.container {
+//@include flexbox-equal-col($padding: 30px, $column-breakpoint: 600px);
+//}
+
+// 1 fixed width - the other takes up remaining space
+@mixin flexbox-two-col-fixed($fixed-col, $fixed-col-width, $element: "div") {
+  display: flex;
+
+  > #{$element} {
+
+    &:first-child {
+      @if $fixed-col == left {
+        flex-basis: $fixed-col-width;
+      }
+
+      @if $fixed-col == right {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+    }
+
+    &:last-child {
+      @if $fixed-col == left {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      @if $fixed-col == right {
+        flex-basis: $fixed-col-width;
+      }
+    }
+  }
+}
+// 1 content-based width; other takes up remaining space
+@mixin flexbox-two-col-flexible($fixed-col, $padding: $column-gutter, $element: "div") {
+  display: flex;
+
+  > #{$element} {
+
+    &:first-child {
+      @if $fixed-col == left {
+        margin-right: $padding;
+      }
+
+      @if $fixed-col == right {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+    }
+
+    &:last-child {
+      @if $fixed-col == left {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      @if $fixed-col == right {
+        margin-left: $padding;
+      }
+    }
+  }
+}
+//@include flexbox-two-col-flexible($fixed-col: left, $padding: 30px);
+
+// Both percentage-based widths
+@mixin flexbox-two-col-fluid($first-col-width, $padding: $column-gutter, $element: "div") {
+  display: flex;
+
+  > #{$element} {
+
+    &:first-child {
+      flex-basis: $first-col-width;
+      margin-left: 0;
+      margin-right: $padding / 2;
+    }
+
+    &:last-child {
+      flex-basis: (100% - $first-col-width);
+      margin-right: 0;
+      margin-left: $padding / 2;
+    }
+  }
+}
+//@include flexbox-two-col-fluid($first-col-width: 55%, $padding: 60px);
+
+// Wrapping grid
+@mixin flexbox-grid($col-num, $element: "div", $reverse: false) {
+  display: flex;
+  @if ($reverse==false) {
+    flex-wrap: wrap;
+  }
+  @if ($reverse==true) {
+    flex-wrap: wrap-reverse;
+  }
+
+  > #{$element} {
+    flex-basis: 100% / $col-num;
+  }
+}
+//@include flexbox-grid($col-num: 3);

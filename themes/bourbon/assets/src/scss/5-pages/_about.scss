@@ -1,0 +1,3 @@
+.about-section {
+  @include flexbox-two-col-flexible($fixed-col: left, $padding: 15px);
+}
