@@ -1,12 +1,18 @@
 <?php
 //TODO: figure out how to move this snippet class to components..
 use yii\helpers\Url;
+use app\components\Gallery;
 
 /**
  * Custom snippets to extend the Markdown markup
  */
 class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
 {
+    public function autogallery($gallery = null)
+    {
+        return Gallery::gallery($gallery);
+    }
+
     public function clearfix($text=null)
     {
         return "<div class=\"clearfix\"></div>";
