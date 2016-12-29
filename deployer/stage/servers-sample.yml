@@ -14,6 +14,10 @@ prod_1:
         debug: false
         stage: 'prod'
 
+        jade:
+            cache:
+                lifetime: 3600
+
         github:
             token: secretstuff
             owner: user
@@ -36,6 +40,10 @@ dev_1:
     app:
         debug: true
         stage: 'dev'
+
+        jade:
+            cache:
+                lifetime: 0
 
         github:
             token: secretstuff
