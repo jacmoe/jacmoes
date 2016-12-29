@@ -14,12 +14,9 @@ namespace app\components;
  */
 use Yii;
 use yii\helpers\Url;
-use Imagine\Gd\Imagine;
-use Imagine\Image\ImageInterface;
 
 class Gallery {
     private static $extensions = array("jpg","png","gif","JPG","PNG","GIF");
-    private static $thumb_width = 150;
 
     public static function gallery($gallery = null)
     {
@@ -41,13 +38,12 @@ class Gallery {
 
                 if (!is_dir($thumb_dir))
                 {
-                    mkdir($thumb_dir);
-                    chmod($thumb_dir, 0775);
+                    return "<div>The <em>\"$gallery\"</em> gallery does not contain any image thumbnails.</div>";
                 }
 
-                $return .= '<div><ul class="inline-list">' . "\n";
+                $return .= "<div><ul class=\"inline-list\">\n";
                 $return = $return . Gallery::getImages($gallery, $gallery_dir, $files);
-                $return .= '</ul></div>' . "\n";
+                $return .= "</ul></div>\n";
                 return $return;
             }
 
@@ -62,7 +58,7 @@ class Gallery {
     // fetch images from description file and process them in order
     private static function getImages($gallery, $gallery_dir, $files)
     {
-        $images = '';
+        $images = "";
         $image_description_file = join(DIRECTORY_SEPARATOR, array($gallery_dir, $gallery, "images.txt"));
         if(file_exists($image_description_file))
         {
@@ -97,7 +93,7 @@ class Gallery {
         $thumb = join(DIRECTORY_SEPARATOR, array($gallery_dir, $gallery, "thumbs", $file));
         if (!file_exists($thumb))
         {
-            Gallery::make_thumb($gallery_dir, $file, $thumb, Gallery::$thumb_width);
+            return "Missing thumbnail!";
         }
         $title = Gallery::itemDescription(join(DIRECTORY_SEPARATOR, array($gallery_dir, $gallery)), $file);
         $target = $file;
@@ -117,8 +113,8 @@ class Gallery {
         }
 
         return "<a href=\""
-                . $target_url . "\""
-                . " data-lightbox=\""
+            . $target_url . "\""
+            . " data-lightbox=\""
             . "$gallery"
             . " data-title=\"" . $title . "\""
             . " title=\"" . $title
@@ -163,6 +159,5 @@ class Gallery {
             }
         }
     }
-    private static function make_thumb($folder,$file,$dest,$thumb_width) {
-    }
+
 }
