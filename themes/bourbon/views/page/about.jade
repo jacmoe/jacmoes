@@ -1,10 +1,14 @@
 include partials/_viewtop.php
-//-include partials/_breadcrumbs.php
+include ../common/_mixins
 .postheader
   .title
     h1: !=$page->title
   .description
   hr
 .content
+  img.gallery.th.image(src="images/about/chefsselfie_custom.jpg" alt="Jacob Moen" title="Jacob Moen")
+  include partials/about/_me.jade
+  include partials/about/_elsewhere.jade
+  +icondiv('heart')
   !=$content
-.content
+  .content
