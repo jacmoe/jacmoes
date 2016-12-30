@@ -112,19 +112,18 @@ class Gallery {
             list($width, $height, $type, $attr) = $image_info;
         }
 
-        return "<a href=\""
+        return "<a href = \""
             . $target_url . "\""
-            . " data-lightbox=\""
-            . "$gallery"
-            . " data-title=\"" . $title . "\""
-            . " title=\"" . $title
-            . "\" class=\"sb\"><span class=\"imagewrap\"><img src=\""
+            . " data-lightbox = \""
+            . "$gallery\""
+            . " data-title = \"" . $title . "\""
+            . " title = \"" . $title
+            . "\" class = \"sb\"><span class = \"imagewrap\"><img src = \""
             . $image_url
-            . "\" alt=\"" . $title . "\" title=\""
-            . $title . "\" class=\"gallery th "
-            //. $align . " floated image\""
-            . (!isset($width) ? "" : " width=\"" . $width . "\" ")
-            . (!isset($height) ? "" : " height=\"" . $height . "\" ")
+            . "\" alt = \"" . $title . "\" title = \""
+            . $title . "\" class = \"gallery th\" "
+            . (!isset($width) ? "" : " width = \"" . $width . "\" ")
+            . (!isset($height) ? "" : " height = \"" . $height . "\" ")
             . "/></span></a>";
     }
 
