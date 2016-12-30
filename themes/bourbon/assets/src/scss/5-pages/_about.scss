@@ -1,3 +1,9 @@
 .about-section {
-  @include flexbox-two-col-flexible($fixed-col: left, $padding: 15px);
+  @include flexbox-two-col-fluid($first-col-width: 20%, $padding: 15px);
+  //@include flexbox-two-col-flexible($fixed-col: left, $padding: 15px);
+}
+@media (max-width: 500px) {
+  .about-section {
+    display: block;
+  }
 }

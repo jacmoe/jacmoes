@@ -6,23 +6,42 @@ include ../common/_mixins
   .description
   hr
 .content
-  div
-    aside
-      figure
-        img.gallery.th.image(src="images/about/chefsselfie_custom.jpg" alt="Jacob Moen" title="Jacob Moen")
-        figcaption
-        p: |Photo of me
-    section(role="main")
-      include partials/about/_me
+  .about-section
+    div
+      aside
+        img.th(src="images/about/chefsselfie_custom.jpg" alt="Jacob Moen" title="Jacob Moen")
+        include partials/about/_me
+    div
+      section(role="main")
+        |I am blah blah
+  +icondiv('heart')
+  section.about-section
+    div
       include partials/about/_elsewhere
-  section
-    p: |Some stuff here
-  section
-    p: |other stuff here
-  section
-    p: |olksdfj
-  section
-    p: |sdlkfj
-  section
-    +icondiv('heart')
-    !=$content
+    div
+      h2: |Elsewhere
+  +icondiv('heart')
+  section.about-section
+    div
+      p: |sdf
+    div
+    h2: |Skills
+  +icondiv('heart')
+  section.about-section
+    div
+      p: |sdf
+    div
+    h2: |Projects
+  +icondiv('heart')
+  section.about-section
+    div
+      p: |sdf
+    div
+    h2: |Trivia
+  +icondiv('heart')
+  section.about-section
+    div
+      p: |sdf
+    div
+      h2: |Gallery
+      !=$content
