@@ -7,3 +7,4 @@
 /current
 /releases
 /.dep
+/package-lock.json
