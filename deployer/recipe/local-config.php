@@ -10,8 +10,6 @@ require_once __DIR__ . '/common.php';
 
 task('local-config', function () {
 
-    echo get('repository') . "\n";
-
     if(askConfirmation("Local configuration.\n\nThis will overwrite any existing file without further warning!\n\nAre you sure you want to continue?")) {
         /**
         * Paser value for template compiler
@@ -22,12 +20,9 @@ task('local-config', function () {
         $paser = function($matches) {
             if (isset($matches[1])) {
                 if($matches[1] === 'release_path') {
-                    echo "Got a release_path\n";
                     $matches[1] = 'deploy_path';
                 }
-                echo "about to get value " . $matches[1] . "\n";
                 $value = get($matches[1]);
-                echo "Got value: " . $value . "\n";
                 if (is_null($value) || is_bool($value) || is_array($value)) {
                     $value = var_export($value, true);
                 }
@@ -44,11 +39,7 @@ task('local-config', function () {
         * @return string
         */
         $compiler = function ($contents) use ($paser) {
-            echo "I am in compiler\n";
             $contents = preg_replace_callback('/\{\{\s*([\w\.]+)\s*\}\}/', $paser, $contents);
-
-            echo "Contents: " . $contents;
-
             return $contents;
         };
 
@@ -62,19 +53,14 @@ task('local-config', function () {
         $tmpDir = sys_get_temp_dir();
         $releaseDir = get('deploy_path');
 
-        echo "About to loop over files found...\n";
         /* @var $file \Symfony\Component\Finder\SplFileInfo */
         foreach ($iterator as $file) {
-            echo "File : " . $file . "\n";
             $success = false;
             // Make tmp file
             $tmpFile = tempnam($tmpDir, 'tmp');
-            echo $tmpFile . "\n";
             if (!empty($tmpFile)) {
-                echo "tmpFile is not empty\n";
                 try {
                     $contents = $compiler($file->getContents());
-                    echo "compiler got content\n";
 
                     // cookie validation key
                     if(basename($file) === 'web.php.tpl') {
@@ -85,7 +71,6 @@ task('local-config', function () {
                     }
 
                     $target   = preg_replace('/\.tpl$/', '', $file->getRelativePathname());
-                    echo "Target : " . $target . "\n";
                     // Put contents and upload tmp file to server
                     if (file_put_contents($tmpFile, $contents) > 0) {
                         if(basename($file) === 'yii.tpl') {
