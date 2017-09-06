@@ -18,7 +18,7 @@ set('keep_releases', 2);
 set('writable_use_sudo', false); // Using sudo in writable commands?
 
 task('deploy:configure_composer', function () {
-  $stage = get('app.stage');
+  $stage = get('app_stage');
   if($stage == 'dev') {
     set('composer_options', 'install --verbose --no-progress --no-interaction');
   }
@@ -35,11 +35,11 @@ task('deploy:build_assets', function () {
 
 // update symlink to images dir
 task('deploy:images_symlink', function () {
-    run('php {{release_path}}/yii mdpages/pages/symlink');
+    run('{{bin/php}} {{release_path}}/yii mdpages/pages/symlink');
 })->desc('Update images symlink');
 
 task('flush_cache', function () {
-    run('php {{release_path}}/yii cache/flush-all');
+    run('{{bin/php}} {{release_path}}/yii cache/flush-all');
 })->desc('Flush the cache');
 
 task('flush_templates', function() {
