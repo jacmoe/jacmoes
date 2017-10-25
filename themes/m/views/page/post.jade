@@ -1,0 +1,22 @@
+include partials/_viewtop.php
+//-include partials/_breadcrumbs.php
+include ../common/_mixins
+.postheader
+  .title
+    h1: !=$page->title
+  .description
+    p: !=$page->description
+  hr
+.clearfix
+  span.updated
+    small
+      +date($page->datetime)
+  span.tags
+    small
+      !=$page->tags
+.content
+  !=$content
+  +icondiv('heart')
+  #disqus_thread
+  #hashover
+  include partials/_hashover
