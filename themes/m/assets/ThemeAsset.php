@@ -1,5 +1,5 @@
 <?php
-namespace app\themes\bourbon\assets;
+namespace app\themes\m\assets;
 
 use yii\web\AssetBundle;
 

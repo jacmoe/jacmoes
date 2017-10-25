@@ -1,15 +1,21 @@
 header
-  .container
-    #header
-      #logo
-        span.logo
-          a(href=Yii::$app->homeUrl)
-            img(height="36" width="36" title="Jacmoes Cyber Soapbox"
-              src=$pype_logo alt="Jacmoes Cyber Soapbox")
-            span.logo-text Jacmoes Cyber Soapbox
-      #headermenu
-        nav.right
-          !=Html::a('Home', Page::url('/'), array('class' => ($view->params['url'] == 'index') ? 'active' : ''))
-          !=Html::a('Blog', Page::url('blog'), array('class' => ($view->params['url'] == 'blog') ? 'active' : ''))
-          !=Html::a('About', Page::url('about'), array('class' => ($view->params['url'] == 'about') ? 'active' : ''))
-          !=Html::a('', Url::to('/feed'), array('class' => 'rss-link', 'title' => 'RSS Feed'))
+  nav#navigation
+    .m-container
+      .m-row
+        a#m-navbar-brand.m-col-t-9.m-col-m-none.m-left-m(href=Yii::$app->homeUrl)
+          img(height="36" width="36" title="Jacmoes Cyber Soapbox"
+            src=$pype_logo alt="Jacmoes Cyber Soapbox")
+          span.logo-text Jacmoes Cyber Soapbox
+          a#m-navbar-show.m-col-t-3.m-hide-m.m-text-right(href="#navigation" title="Hide navigation") &#9776;
+          a#m-navbar-hide.m-col-t-3.m-hide-m.m-text-right(href="#" title="Hide navigation") &#9776;
+          div#m-navbar-collapse.m-col-t-12.m-show-m.m-col-m-none.m-right-m
+            .m-row
+              ol
+                li
+                  !=Html::a('Home', Page::url('/'), array('class' => ($view->params['url'] == 'index') ? 'active' : ''))
+                li
+                  !=Html::a('Blog', Page::url('blog'), array('class' => ($view->params['url'] == 'blog') ? 'active' : ''))
+                li
+                  !=Html::a('About', Page::url('about'), array('class' => ($view->params['url'] == 'about') ? 'active' : ''))
+                li
+                  !=Html::a('o', Url::to('/feed'), array('class' => 'rss-link', 'title' => 'RSS Feed'))
