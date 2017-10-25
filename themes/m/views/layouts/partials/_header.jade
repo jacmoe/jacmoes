@@ -12,10 +12,10 @@ header
             .m-row
               ol
                 li
-                  !=Html::a('Home', Page::url('/'), array('class' => ($view->params['url'] == 'index') ? 'active' : ''))
+                  !=Html::a('Home', Page::url('/'), array('id' => ($view->params['url'] == 'index') ? 'm-navbar-current' : ''))
                 li
-                  !=Html::a('Blog', Page::url('blog'), array('class' => ($view->params['url'] == 'blog') ? 'active' : ''))
+                  !=Html::a('Blog', Page::url('blog'), array('id' => ($view->params['url'] == 'blog') ? 'm-navbar-current' : ''))
                 li
-                  !=Html::a('About', Page::url('about'), array('class' => ($view->params['url'] == 'about') ? 'active' : ''))
+                  !=Html::a('About', Page::url('about'), array('id' => ($view->params['url'] == 'about') ? 'm-navbar-current' : ''))
                 li
                   !=Html::a('o', Url::to('/feed'), array('class' => 'rss-link', 'title' => 'RSS Feed'))
