@@ -3,7 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 $snippets = require(__DIR__ . '/snippets.php');
 
-$theme = 'bourbon';
+$theme = 'm';
 
 $config = [
     'id' => 'jacmoes',

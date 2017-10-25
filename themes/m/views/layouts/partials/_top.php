@@ -15,3 +15,4 @@ $theme = $view->theme;
 $asset = app\themes\m\assets\ThemeAsset::register($view);
 $pype_logo = $asset->baseUrl . '/img/logo36.png';
 $uber_logo = $asset->baseUrl . '/img/jacmoe_ubernaut.png';
+$hero_style = "background-image: url('$asset->baseUrl . '/img/moutains.png');";

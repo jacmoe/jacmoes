@@ -1,13 +1,18 @@
 include partials/_viewtop.php
 include ../common/_mixins
-.hero
-  .hero-inner
-    img(src="jacmoe.jpg" alt="Jacmoes Cyber Soapbox" width="150" height="200")
-    .hero-copy
-      h1.hero-title Jacmoes Cyber Soapbox
-      p This is the homepage of Jacob Moen where he writes increasingly interesting things.
-.content
-  +icondiv('heart')
-.content
-  -$post = Page::pages('datetime DESC', array('published', '==', true))->first();
-  include partials/_postentry
+
+main
+  article
+    div#m-landing-image(style="background-image: url('mountains.png');")
+      #m-landing-cover
+        .m-container
+          img.m-image(src="jacmoe.jpg" alt="Jacmoes Cyber Soapbox" width="150" height="200")
+          .m-text
+            h1.m-big.m-text-center Jacmoes Cyber Soapbox
+            p.m-text-center This is the homepage of Jacob Moen where he writes increasingly interesting things.
+    .m-container
+      .content
+        +icondiv('heart')
+        -$post = Page::pages('datetime DESC', array('published', '==', true))->first();
+        include partials/_postentry
+        +icondiv('heart')

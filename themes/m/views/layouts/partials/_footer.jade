@@ -1,11 +1,13 @@
-footer#footer
-  .footer-wrapper
-    .footer-content
-      .copyright
-        |&copy; 2010 - 2017&nbsp;
-        a(href="https://plus.google.com/100178862812199164136?rel=author" target="_blank" rel="noopener noreferrer" title="Written by Jacob Moen") Jacob Moen
-      .powered
-        !=Pype::powered(true, 'white')
-        .dreamhost.right
+footer
+  nav
+    .m-container
+      .m-row
+        .powered.m-col-s-3.m-col-t-6.m-push-m-3
+          !=Pype::powered(true, 'white')
+        .dreamhost.m-col-s-3.m-col-t-6.m-push-m-3
           a(href="https://uberspace.de/" target="_blank" rel="noopener noreferrer")
             img(src=$uber_logo title="Hosted on asteroids" alt="Hosted on asteroids" width=100 height=53)
+      .m-row
+        .copyright.m-col-l-10
+          |&copy; 2010 - 2017&nbsp;
+          a(href="https://plus.google.com/100178862812199164136?rel=author" target="_blank" rel="noopener noreferrer" title="Written by Jacob Moen") Jacob Moen
