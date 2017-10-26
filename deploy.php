@@ -49,5 +49,4 @@ task('flush_templates', function() {
 
 after('deploy:shared', 'deploy:configure');
 before('deploy:vendors', 'deploy:configure_composer');
-after('deploy:vendors', 'deploy:build_assets');
-after('deploy:build_assets', 'deploy:images_symlink');
+after('deploy:vendors', 'deploy:images_symlink');
