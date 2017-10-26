@@ -1,5 +1,5 @@
 prod_1:
-    host: hostname
+    hostname: hostname
     user: username
     ssh_public_key: /home/user/.ssh/key.pub
     ssh_private_key: /home/user/.ssh/key
@@ -24,7 +24,7 @@ prod_1:
 
 dev_1:
     local: true
-    host: localhost
+    hostname: localhost
     user: username
     password: password
     stage: local
