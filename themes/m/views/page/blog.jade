@@ -1,0 +1,13 @@
+include partials/_viewtop.php
+//-include partials/_breadcrumbs.php
+include ../common/_mixins
+.postheader.m-container
+  .title
+    h1: !=$page->title
+  .description
+  hr
+  br
+include partials/_postlist.php
+.content.m-container
+  each $post in $posts
+    include partials/_postentry

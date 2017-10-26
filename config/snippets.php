@@ -46,7 +46,13 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
             list($width, $height, $type, $attr) = $image_info;
         }
 
-        return "<span class=\"imagewrap\">"
+        if( $align == 'left') {
+            $align = "m-left-m";
+        } else  {
+            $align = "m-col-s-12 m-center-s m-col-m-8 m-right-m";
+        }
+
+        return "<span class=\"imagewrap $align\">"
             . "<img src=\""
             . $image_url
             . "\" alt=\"" . $title

@@ -1,0 +1,12 @@
+include partials/_viewtop.php
+include ../common/_mixins
+//-include partials/_breadcrumbs.php
+.postheader.m-container
+  .title
+    h1: !=$page->title
+  .description
+    p: !=$page->description
+  hr
+.content.m-container
+  !=$content
+  +icondiv('heart')

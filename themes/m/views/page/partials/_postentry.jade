@@ -1,0 +1,26 @@
+.postentry(itemscope itemtype="http://schema.org/BlogPosting")
+  .m-row
+    article
+      span.imagewrap
+        a.th.small.image(href=Url::to($post->url, true))
+          img(width="200" height="150"
+            src=Url::to('images/' . $post->thumb, true)
+            title=$post->title
+            alt=$post->title itemprop="image")
+      header.m-col-s-12.m-center-s.m-col-m-8.m-right-m
+        h1
+          a(href=Url::to($post->url, true) rel="bookmark" title=$post->title)
+            time(itemprop="dateCreated" datetime=date('c', $post->datetime))
+            time.m-date(itemprop="datePublished" datetime=date('c', $post->datetime))
+              +month($post->datetime)
+              span.m-date-day
+                +day($post->datetime)
+              +year($post->datetime)
+            span(itemprop="name")
+              =$post->title
+        p(itemprop="description")
+          =$post->description
+        a.button.small(href=Url::to($post->url, true)
+          title=$post->title)
+          |Read More
+br

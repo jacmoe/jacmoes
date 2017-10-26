@@ -1,0 +1,15 @@
+mixin icondiv(icon)
+  .ui.horizontal.clearing.divider
+    i(class="fa fa-#{$icon} fa-small" style="font-size: 0.7em;")
+
+mixin date(date)
+  !=date(Yii::$app->params['dateformat'], $date)
+
+mixin month(date)
+  !=date('M', $date)
+
+mixin day(date)
+  !=date('d', $date)
+
+mixin year(date)
+  !=date('Y', $date)

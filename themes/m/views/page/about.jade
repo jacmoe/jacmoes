@@ -1,0 +1,60 @@
+include partials/_viewtop.php
+include partials/about/_age.php
+include ../common/_mixins
+.postheader.m-container
+  .title
+    h1: !=$page->title
+  .description
+  hr
+.content.m-container
+  .about-section
+    div
+      aside
+        img.th(src="images/about/chefsselfie_custom.jpg" alt="Jacob Moen" title="Jacob Moen")
+        include partials/about/_me
+    div
+      section(role="main")
+        include partials/about/_introduction
+  +icondiv('heart')
+  section.about-section
+    div
+      include partials/about/_links
+    div
+      h2: |Elsewhere
+      include partials/about/_elsewhere
+  +icondiv('heart')
+  section.about-section
+    div
+      i.fa.fa-cogs.fa-5x
+    div
+      h2: |Skills
+      include partials/about/_skills
+  +icondiv('heart')
+  section.about-section
+    div
+      i.fa.fa-check-square-o.fa-5x
+    div
+      h2: |Projects
+      include partials/about/_projects
+  +icondiv('heart')
+  section.about-section
+    div
+      i.fa.fa-asterisk.fa-5x
+    div
+      h2: |Trivia
+      include partials/about/_trivia
+  +icondiv('heart')
+  section.about-section
+    div
+      i.fa.fa-camera-retro.fa-5x
+    div
+      h2: |Gallery
+      !=$content
+  +icondiv('heart')
+  section.about-section
+    div
+      i.fa.fa-code.fa-5x
+    div
+      h2: |About the site
+      include partials/about/_site
+  +icondiv('heart')
