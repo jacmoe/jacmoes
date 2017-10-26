@@ -27,18 +27,18 @@ task('deploy:configure_composer', function () {
 // build assets
 task('deploy:build_assets', function () {
    runLocally('gulp build --production');
-   upload(__DIR__ . '/themes/m/assets/dist/css', '{{deploy_path}}/themes/m/assets/dist');
-   upload(__DIR__ . '/themes/m/assets/dist/fonts', '{{deploy_path}}/themes/m/assets/dist');
-   upload(__DIR__ . '/themes/m/assets/dist/img', '{{deploy_path}}/themes/m/assets/dist');
+   upload(__DIR__ . '/themes/m/assets/dist/css', '{{release_path}}/themes/m/assets/dist');
+   upload(__DIR__ . '/themes/m/assets/dist/fonts', '{{release_path}}/themes/m/assets/dist');
+   upload(__DIR__ . '/themes/m/assets/dist/img', '{{release_path}}/themes/m/assets/dist');
 })->desc('Build assets');
 
 // update symlink to images dir
 task('deploy:images_symlink', function () {
-    run('{{bin/php}} {{deploy_path}}/yii mdpages/pages/symlink');
+    run('{{bin/php}} {{release_path}}/yii mdpages/pages/symlink');
 })->desc('Update images symlink');
 
 task('flush_cache', function () {
-    run('{{bin/php}} {{deploy_path}}/yii cache/flush-all');
+    run('{{bin/php}} {{release_path}}/yii cache/flush-all');
 })->desc('Flush the cache');
 
 task('flush_templates', function() {
