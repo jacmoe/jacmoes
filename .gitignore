@@ -9,4 +9,4 @@
 /.dep
 /package-lock.json
 /.idea
-/themes/m/assets/*
+/themes/m/assets/dist/*
