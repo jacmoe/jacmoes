@@ -9,4 +9,7 @@ class ThemeAsset extends AssetBundle
     public $css = [
         YII_ENV_DEV ? 'css/all.css' : 'css/all.min.css'
     ];
+    public $js = [
+        YII_ENV_DEV ? 'js/all.js' : 'js/all.min.js'
+    ];
 }

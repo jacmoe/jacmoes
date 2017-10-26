@@ -41,6 +41,18 @@ function styles() {
     .pipe($.notify({ message: 'Styles task complete' }));
 };
 
+// Scripts
+function scripts() {
+  return gulp.src(config.PATHS.javascript)
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('all.js'))
+    .pipe($.if(PRODUCTION, $.rename({ suffix: '.min' })))
+    .pipe($.if(PRODUCTION, $.uglify()))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write('.', { sourceRoot: '../../assets/src/js/' })))
+    .pipe(gulp.dest(config.PATHS.dist + '/js'))
+    .pipe($.notify({ message: 'Scripts task complete' }));
+};
+
 // Copy fonts
 function fonts() {
   return gulp.src(config.PATHS.fonts)
@@ -61,7 +73,7 @@ function clean(done) {
 // The main build task
 gulp.task('build', gulp.series(
   clean,
-  gulp.parallel(styles, fonts, images)
+  gulp.parallel(styles, scripts, fonts, images)
 ));
 
 // Watch
@@ -89,3 +101,4 @@ gulp.task('clean', clean);
 gulp.task('fonts', fonts);
 gulp.task('images', images);
 gulp.task('styles', styles);
+gulp.task('scripts', scripts);
