@@ -1,22 +1,31 @@
 include partials/_viewtop.php
 //-include partials/_breadcrumbs.php
 include ../common/_mixins
-.postheader.m-container
-  .title
-    h1: !=$page->title
-  .description
-    p: !=$page->description
-  hr
-.clearfix.m-container
-  span.updated
-    small
-      +date($page->datetime)
-  span.tags
-    small
-      !=$page->tags
-.content.m-container
-  !=$content
-  +icondiv('heart')
-  #disqus_thread
-  #hashover
-  include partials/_hashover
+.m-container
+  .postentry(itemscope itemtype="http://schema.org/BlogPosting")
+    .m-row
+      article
+        header
+          h1
+            a(href=Url::to($page->url, true) rel="bookmark" title=$page->title)
+              time(itemprop="dateCreated" datetime=date('c', $page->datetime))
+              time.m-date(itemprop="datePublished" datetime=date('c', $page->datetime))
+                +month($page->datetime)
+                span.m-date-day
+                  +day($page->datetime)
+                +year($page->datetime)
+              span(itemprop="name")
+                =$page->title
+          p(itemprop="description")
+            =$page->description
+        .content.m-container
+          !=$content
+        footer
+          br
+          p
+            |Posted on 
+            +date($page->datetime)
+        +icondiv('heart')
+        #disqus_thread
+        #hashover
+        include partials/_hashover
