@@ -15,7 +15,7 @@ header
                   !=Html::a('Home', Page::url('/'), array('id' => ($view->params['url'] == 'index') ? 'm-navbar-current' : ''))
                 li
                   !=Html::a('Blog', Page::url('blog'), array('id' => ($view->params['url'] == 'blog') ? 'm-navbar-current' : ''))
-                li
+                //li
                   !=Html::a('About', Page::url('about'), array('id' => ($view->params['url'] == 'about') ? 'm-navbar-current' : ''))
                 li
                   !=Html::a('', Url::to('/feed'), array('class' => 'rss-link', 'title' => 'RSS Feed'))
