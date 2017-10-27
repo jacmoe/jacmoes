@@ -15,9 +15,10 @@
   <!-- publisher -->
   <div itemscope="itemscope" itemtype="http://schema.org/Organization" itemprop="publisher">
   <meta itemprop="name" content="Jacob Moen">
+  -$logo_url = Url::to('Icon.png', true)
   <div itemprop="logo" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
-  <meta contentc=$pype_url>
-  <meta itemprop="url" content=$pype_url />
+  <meta contentc="#{$logo_url}">
+  <meta itemprop="url" content="#{$logo_url}" />
   <meta itemprop="width" content="36" /><meta itemprop="height" content="36" />
   </div>
   </div>
