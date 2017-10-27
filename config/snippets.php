@@ -46,12 +46,6 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
             list($width, $height, $type, $attr) = $image_info;
         }
 
-        if( $align == 'left') {
-            $align = "m-left-m";
-        } else  {
-            $align = "m-col-s-12 m-center-s m-col-m-8 m-right-m";
-        }
-
         return "<span class=\"imagewrap $align\">"
             . "<img src=\""
             . $image_url
@@ -59,7 +53,7 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
             . "\" title=\"" . $title . "\""
             . (!isset($width) ? "" : " width=\"" . $width . "\" ")
             . (!isset($height) ? "" : " height=\"" . $height . "\" ")
-            . "class=\"th gallery "
+            . "class=\"m-image th gallery "
             . $align . "\">"
             . "</span>";
     }
@@ -83,7 +77,7 @@ class Snippets extends \jacmoe\mdpages\components\snippets\Snippets
             . "\" class=\"sb\"><span class=\"imagewrap\"><img src=\""
             . $image_url
             . "\" alt=\"" . $title . "\" title=\""
-            . $title . "\" class=\"gallery th "
+            . $title . "\" class=\"m-image gallery th "
             . $align . " floated image\""
             . (!isset($width) ? "" : " width=\"" . $width . "\" ")
             . (!isset($height) ? "" : " height=\"" . $height . "\" ")
