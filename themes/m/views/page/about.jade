@@ -7,54 +7,55 @@ include ../common/_mixins
   .description
   hr
 .content.m-container
-  .about-section
-    div
+  .about-section.m-row
+    .m-col-m-3
+      include partials/about/_me
+    .m-col-m-4
       aside
         img.th(src="images/about/chefsselfie_custom.jpg" alt="Jacob Moen" title="Jacob Moen")
-        include partials/about/_me
-    div
+    .m-col-m-5
       section(role="main")
         include partials/about/_introduction
   +icondiv('heart')
-  section.about-section
-    div
+  section.about-section.m-row
+    .m-col-m-3
       include partials/about/_links
-    div
+    .m-col-m-9
       h2: |Elsewhere
       include partials/about/_elsewhere
   +icondiv('heart')
-  section.about-section
-    div
+  section.about-section.m-row
+    .m-col-m-3
       i.fa.fa-cogs.fa-5x
-    div
+    .m-col-m-9
       h2: |Skills
       include partials/about/_skills
   +icondiv('heart')
-  section.about-section
-    div
+  section.about-section.m-row
+    .m-col-m-3
       i.fa.fa-check-square-o.fa-5x
-    div
+    .m-col-m-9
       h2: |Projects
       include partials/about/_projects
   +icondiv('heart')
-  section.about-section
-    div
+  section.about-section.m-row
+    .m-col-m-3
       i.fa.fa-asterisk.fa-5x
-    div
+    .m-col-m-9
       h2: |Trivia
       include partials/about/_trivia
   +icondiv('heart')
-  section.about-section
-    div
+  section.about-section.m-row
+    .m-col-m-3
       i.fa.fa-camera-retro.fa-5x
-    div
+    .m-col-m-9
       h2: |Gallery
       !=$content
   +icondiv('heart')
-  section.about-section
-    div
+  section.about-section.m-row
+    .m-col-m-3
       i.fa.fa-code.fa-5x
-    div
+    .m-col-m-9
       h2: |About the site
       include partials/about/_site
   +icondiv('heart')

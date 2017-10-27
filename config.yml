@@ -1,5 +1,5 @@
 # Your project's server will run on proxy
-PROXY: "https://local.jacmoe.dk"
+PROXY: "https://jacmoe.dev"
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:
