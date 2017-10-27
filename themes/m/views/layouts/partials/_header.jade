@@ -1,5 +1,5 @@
 header
-  nav#navigation
+  nav#navigation(class=($view->params['url'] == 'index') ? 'm-navbar-landing' : '')
     .m-container
       .m-row
         a#m-navbar-brand.m-col-t-9.m-col-m-none.m-left-m(href=Yii::$app->homeUrl)
