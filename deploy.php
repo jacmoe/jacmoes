@@ -28,7 +28,8 @@ task('deploy:configure_composer', function () {
 task('deploy:build_assets', function () {
    runLocally('gulp build --production');
    upload(__DIR__ . '/themes/m/assets/dist', '{{release_path}}/themes/m/assets');
-})->desc('Build assets');
+   runLocally('gulp build');
+  })->desc('Build assets');
 
 // update symlink to images dir
 task('deploy:images_symlink', function () {
