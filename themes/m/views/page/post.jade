@@ -1,26 +1,26 @@
 include partials/_viewtop.php
 //-include partials/_breadcrumbs.php
 include ../common/_mixins
-<!-- Structured data start -->
-<!-- headline and dates if not visible -->
-<meta itemprop="headline" content="#{$page->title}">
-meta(itemprop="datemodified" content=date('c', $page->datetime))
-<!-- image | Url complete is important-->
-<div itemprop="image" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
--$image_url = Url::to('images/' . $page->thumb, true)
-meta(itemprop="url" content=$image_url)
-</div>
-<!-- author -->
-<div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
-<meta itemprop="name" content="Jacob Moen">
-</div>
-<!-- publisher -->
-<div itemscope="itemscope" itemtype="http://schema.org/Organization" itemprop="publisher">
-<meta itemprop="name" content="Jacob Moen">
-</div>
-<!-- Structured data end -->
 .m-container
   .postentry(itemscope itemtype="http://schema.org/BlogPosting")
+  <!-- Structured data start -->
+  <!-- headline and dates if not visible -->
+  <meta itemprop="headline" content="#{$page->title}">
+  meta(itemprop="datemodified" content=date('c', $page->datetime))
+  <!-- image | Url complete is important-->
+  <div itemprop="image" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+  -$image_url = Url::to('images/' . $page->thumb, true)
+  meta(itemprop="url" content=$image_url)
+  </div>
+  <!-- author -->
+  <div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
+  <meta itemprop="name" content="Jacob Moen">
+  </div>
+  <!-- publisher -->
+  <div itemscope="itemscope" itemtype="http://schema.org/Organization" itemprop="publisher">
+  <meta itemprop="name" content="Jacob Moen">
+  </div>
+  <!-- Structured data end -->
     .m-row
       article
         header

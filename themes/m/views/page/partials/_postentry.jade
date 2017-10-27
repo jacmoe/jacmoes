@@ -1,4 +1,22 @@
 .postentry(itemscope itemtype="http://schema.org/BlogPosting")
+  <!-- Structured data start -->
+  <!-- headline and dates if not visible -->
+  <meta itemprop="headline" content="#{$post->title}">
+  meta(itemprop="datemodified" content=date('c', $post->datetime))
+  <!-- image | Url complete is important-->
+  <div itemprop="image" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+  -$image_url = Url::to('images/' . $post->thumb, true)
+  meta(itemprop="url" content=$image_url)
+  </div>
+  <!-- author -->
+  <div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
+  <meta itemprop="name" content="Jacob Moen">
+  </div>
+  <!-- publisher -->
+  <div itemscope="itemscope" itemtype="http://schema.org/Organization" itemprop="publisher">
+  <meta itemprop="name" content="Jacob Moen">
+  </div>
+  <!-- Structured data end -->
   .m-row
     article
       span.imagewrap
